@@ -51,7 +51,7 @@ export class NgxSkeletonLoaderComponent implements OnInit, AfterViewInit, OnDest
   // tslint:disable-next-line: no-any
   items: Array<any>;
 
-  constructor(@Inject(NGX_SKELETON_LOADER_CONFIG) @Optional() config?: NgxSkeletonLoaderConfig) {
+  constructor(@Inject(NGX_SKELETON_LOADER_CONFIG) @Optional() private config?: NgxSkeletonLoaderConfig) {
     const {
       appearance = 'line',
       animation = 'progress',
@@ -88,6 +88,18 @@ export class NgxSkeletonLoaderComponent implements OnInit, AfterViewInit, OnDest
       }
       this.count = 1;
     }
+
+        //Force count to 1 when custom-content is used
+        if (this.appearance === 'custom-content') {
+          // Shows error message only in Development
+          if (isDevMode() && this.count !== 1) {
+            console.error(
+              `\`NgxSkeletonLoaderComponent\` enforces elements with "custom-content" appearance as DOM nodes. Forcing "count" to "1".`,
+            );
+            this.count = 1;
+          }
+        }
+
     this.items.length = this.count;
 
     const allowedAnimations = ['progress', 'progress-dark', 'pulse', 'false'];
@@ -103,7 +115,7 @@ export class NgxSkeletonLoaderComponent implements OnInit, AfterViewInit, OnDest
       this.animation = 'progress';
     }
 
-    if (['circle', 'line', ''].indexOf(String(this.appearance)) === -1) {
+    if (['circle', 'line', 'custom-content', ''].indexOf(String(this.appearance)) === -1) {
       // Shows error message only in Development
       if (isDevMode()) {
         console.error(
