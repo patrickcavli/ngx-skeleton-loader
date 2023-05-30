@@ -1,5 +1,5 @@
 {
-  "name": "@patrick/ngx-skeleton-loader",
+  "name": "@cavli-wireless/ngx-skeleton-loader",
   "description": "Make beautiful, animated loading skeletons that automatically adapt to your Angular apps- Forked for angular v7 above compatibility",
   "version": "1.0.0",
   "peerDependencies": {
@@ -28,10 +28,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/patrickcavli/ngx-skeleton-loader"
+    "url": "git+https://github.com/patrickcavli/ngx-skeleton-loader.git"
   },
   "bugs": {
     "url": "https://github.com/patrickcavli/ngx-skeleton-loader/issues"
   },
-  "homepage": "https://github.com/patrickcavli/ngx-skeleton-loader#readme"
+  "homepage": "https://github.com/patrickcavli/ngx-skeleton-loader#readme",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Prakash"
 }
