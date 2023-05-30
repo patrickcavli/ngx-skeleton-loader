@@ -1,10 +1,10 @@
 {
   "name": "@cavli-wireless/ngx-skeleton-loader",
   "description": "Make beautiful, animated loading skeletons that automatically adapt to your Angular apps- Forked for angular v7 above compatibility",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "peerDependencies": {
-    "@angular/common": ">=8.0.0",
-    "@angular/core": ">=8.0.0"
+    "@angular/common": ">=7.0.0",
+    "@angular/core": ">=7.0.0"
   },
   "license": "MIT",
   "keywords": [
